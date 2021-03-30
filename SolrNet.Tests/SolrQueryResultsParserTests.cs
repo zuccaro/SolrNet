@@ -90,6 +90,13 @@ namespace SolrNet.Tests
         }
 
         [Fact]
+        public void VeryLargeNumFound()
+        {
+            var r = ParseFromResource<TestDocument>("Resources.responseWithLargeNumFound.xml");
+            Assert.Equal(4294967297, r.NumFound);
+        }
+
+        [Fact]
         public void CanParseNextCursormark()
         {
             var r = ParseFromResource<TestDocument>("Resources.response.xml");

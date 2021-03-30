@@ -66,7 +66,7 @@ namespace SolrNet.Impl.ResponseParsers {
             if (resultNode == null)
                 return;
 
-            results.NumFound = Convert.ToInt32(resultNode.Attribute("numFound").Value);
+            results.NumFound = Convert.ToInt64(resultNode.Attribute("numFound").Value);
             results.Start = Convert.ToInt32(resultNode.Attribute("start").Value);
             var maxScore = resultNode.Attribute("maxScore");
             if (maxScore != null)
